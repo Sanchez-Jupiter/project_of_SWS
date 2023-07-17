@@ -8,10 +8,12 @@ const player_towards_right = update_scale( create_sprite("https://raw.githubuser
 const player_towards_right2 = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/7a9ae57ae73cdebd3c49bfe1e5f9232731e0f3a5/player_towars_right2.png"), [0.15, 0.25]);
 const player_towards_left  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_195411.png"), [0.15, 0.25] );
 const player_towards_left2  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/62abc972249c331bca6e0e98382e6aa0f3a2c67c/player_towars_left2.png"), [0.15, 0.25] );
+const barri_1 = create_rectangle(200, 50);
 update_position(player_towards_left , [-inf, -inf]);
 update_position(player_towards_left2 , [-inf, -inf]);
 update_position(player_towards_right, [-inf, -inf]);
 update_position(player_towards_right2, [-inf, -inf]);
+update_position(barri_1, [100, 200]);
 function make_anim(mov, pos){
     return update_position(mov, pos);
 }
