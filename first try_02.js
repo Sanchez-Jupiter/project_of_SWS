@@ -19,7 +19,6 @@ function make_anim(mov, pos){
 }
 
 let player = make_anim(player_towards_right, [300, 300]);
-
 const movement_dist = 10;
 
 function add_vectors(to, from) {
