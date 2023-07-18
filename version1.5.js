@@ -63,7 +63,7 @@ let last_dir = -1;
 
 make_anim(player[cond], birth_place);
 
-const find_xy = create_text(stringify(query_position(player[cond])[0]) + "," +stringify(query_position(player[cond])[1]));
+const find_xy = create_text(stringify(query_position(player[cond])[0]) + "," + stringify(query_position(player[cond])[1]));
 
 update_loop(game_state => {
     const new_position = query_position(player[cond]);
