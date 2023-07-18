@@ -1,6 +1,8 @@
 import { update_text, create_text, gameobjects_overlap, update_scale, create_sprite, create_rectangle, query_position, update_position, update_loop, build_game, input_key_down } from "arcade_2d";
 
 // Create GameObjects outside update_loop(...)
+const BOUNDRY_MIN = 0;
+const BOUNDRY_MAX = 550;
 const birth_place = [300, 300];
 const g = 5;
 const inf = 999999; 
@@ -73,7 +75,7 @@ update_loop(game_state => {
     
     
     
-    //gravity
+    
     
     
     update_text(find_xy, stringify(posi[0]) + "," + stringify(posi[1]));
@@ -112,18 +114,20 @@ update_loop(game_state => {
         }
     }
     
-    if(posi[0] < 0 ) {
-        update_position(player[cond], [0 + 1, posi[1]]);
+    //drag those who are out of rage
+    if(posi[0] < BOUNDRY_MIN ) {
+        update_position(player[cond], [BOUNDRY_MIN + 1, posi[1]]);
     }
-    if(posi[0] > 550){
-        update_position(player[cond], [550 - 1, posi[1]]);
+    if(posi[0] > BOUNDRY_MAX){
+        update_position(player[cond], [BOUNDRY_MAX - 1, posi[1]]);
     }
-    if(posi[1] < 0){
-        update_position(player[cond], [posi[0], 0 + 1]);
+    if(posi[1] < BOUNDRY_MIN){
+        update_position(player[cond], [posi[0], BOUNDRY_MIN + 1]);
     }
-    if(posi[1] > 550){
-        update_position(player[cond], [posi[0], 550 - 1]);
+    if(posi[1] > BOUNDRY_MAX){
+        update_position(player[cond], [posi[0], BOUNDRY_MAX - 1]);
     }
+    
     
     
     
@@ -192,11 +196,13 @@ update_loop(game_state => {
        last_dir = RIGHT;
        
    }
+   
    if(query_position(player[cond])[0] > 0 && query_position(player[cond])[0] < 550 
         && query_position(player[cond])[1] > 0 && query_position(player[cond])[1] < 550){
             update_position(player[cond], [query_position(player[cond])[0], query_position(player[cond])[1] + g]);
-        }jjadjdjdddddddddajddadjj
-     last_dir = DOWN;
+        }
+    last_dir = DOWN;//gravity
+    
    // Update GameObjects within update_loop(...)wda
    //update_position(player[cond], new_position);
 });
