@@ -1,6 +1,7 @@
 import { update_text, create_text, gameobjects_overlap, update_scale, create_sprite, create_rectangle, query_position, update_position, update_loop, build_game, input_key_down } from "arcade_2d";
 
 // Create GameObjects outside update_loop(...)
+const birth_place = [300, 300];
 const g = 5;
 const inf = 999999; 
 const movement_dist = 10;
@@ -60,8 +61,10 @@ let cond = player_towards_right;
 let dir = RIGHT;
 let last_dir = -1;
 
-make_anim(player[cond], [300, 300]);
+make_anim(player[cond], birth_place);
+
 const find_xy = create_text(stringify(query_position(player[cond])[0]) + "," +stringify(query_position(player[cond])[1]));
+
 update_loop(game_state => {
     const new_position = query_position(player[cond]);
     const pre_position = query_position(player[cond]);
