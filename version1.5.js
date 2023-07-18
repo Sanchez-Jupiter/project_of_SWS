@@ -42,9 +42,6 @@ function make_anim(mov, pos){
     return update_position(mov, pos);
 }
 
-
-
-
 function add_vectors(to, from) {
    to[0] = to[0] + from[0];
    to[1] = to[1] + from[1];
