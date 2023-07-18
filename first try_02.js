@@ -32,8 +32,9 @@ function add_vectors(to, from) {
 }
 
 update_loop(game_state => {
-   const new_position = query_position(player);
+    const new_position = query_position(player);
     let temp = player;
+    
    if (input_key_down("w")) {
        update_position(temp, [-inf, -inf]);
        if( !gameobjects_overlap(temp, barri[0]) ){
@@ -43,6 +44,7 @@ update_loop(game_state => {
            add_vectors(new_position, [0, movement_dist]);
        }
    }
+   
    if (input_key_down("a")) {
         update_position(temp, [-inf, -inf]);
         if( player === player_towards_left){
@@ -58,6 +60,7 @@ update_loop(game_state => {
            add_vectors(new_position, [movement_dist, 0]);
        }
    }
+   
    if (input_key_down("s")) {
        update_position(temp, [-inf, -inf]);
        if( !gameobjects_overlap(temp, barri[0]) ){
@@ -67,6 +70,7 @@ update_loop(game_state => {
            add_vectors(new_position, [0, -1 * movement_dist]);
        }
    }
+   
    if (input_key_down("d")) {
        update_position(temp, [-inf, -inf]);
        if( player === player_towards_right){
