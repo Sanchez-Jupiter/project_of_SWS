@@ -22,6 +22,7 @@ const player_towards_left  = 2;
 const player_towards_left2  = 3;
 
 const barri = [create_rectangle(200, 50)];
+
 const boundry = [create_rectangle(20, 1200), create_rectangle(20, 1200), 
                 create_rectangle(1200, 20), create_rectangle(1200, 20)];
 
@@ -194,7 +195,7 @@ update_loop(game_state => {
    if(query_position(player[cond])[0] > 0 && query_position(player[cond])[0] < 550 
         && query_position(player[cond])[1] > 0 && query_position(player[cond])[1] < 550){
             update_position(player[cond], [query_position(player[cond])[0], query_position(player[cond])[1] + g]);
-        }
+        }jjadjdjdddddddddajddadjj
      last_dir = DOWN;
    // Update GameObjects within update_loop(...)wda
    //update_position(player[cond], new_position);
