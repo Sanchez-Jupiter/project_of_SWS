@@ -121,6 +121,8 @@ update_loop(game_state => {
         update_position(player[cond], [posi[0], 550]);
     }
     
+    
+    
    if (input_key_down("w")) {
       // update_position( player, [-inf, -inf] );
        add_vectors(new_position, [0, -1 * movement_dist]);
