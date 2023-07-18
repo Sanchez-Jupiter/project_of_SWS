@@ -2,13 +2,18 @@ import { gameobjects_overlap, update_scale, create_sprite, create_rectangle, que
 
 // Create GameObjects outside update_loop(...)
 const inf = 999999; 
-const background = update_position(create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_181910_com.huawei.hinote.png"), [300, 300]);
+const movement_dist = 10;
+const size_of_player = [0.15, 0.25];
 
-const player_towards_right = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_181659_com.huawei.hinote.png"), [0.15, 0.25] );
-const player_towards_right2 = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/7a9ae57ae73cdebd3c49bfe1e5f9232731e0f3a5/player_towars_right2.png"), [0.15, 0.25]);
-const player_towards_left  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_195411.png"), [0.15, 0.25] );
-const player_towards_left2  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/62abc972249c331bca6e0e98382e6aa0f3a2c67c/player_towars_left2.png"), [0.15, 0.25] );
+
+const background = update_position(create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_181910_com.huawei.hinote.png"), [300, 300]);
+const player_towards_right = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_181659_com.huawei.hinote.png"),  size_of_player);
+const player_towards_right2 = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/7a9ae57ae73cdebd3c49bfe1e5f9232731e0f3a5/player_towars_right2.png"), size_of_player);
+const player_towards_left  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/main/Screenshot_20230717_195411.png"), size_of_player );
+const player_towards_left2  = update_scale( create_sprite("https://raw.githubusercontent.com/Sanchez-Jupiter/project_of_SWS/62abc972249c331bca6e0e98382e6aa0f3a2c67c/player_towars_left2.png"), size_of_player );
 const barri = [create_rectangle(200, 50)];
+
+
 update_position(player_towards_left , [-inf, -inf]);
 update_position(player_towards_left2 , [-inf, -inf]);
 update_position(player_towards_right, [-inf, -inf]);
@@ -19,7 +24,7 @@ function make_anim(mov, pos){
 }
 
 let player = make_anim(player_towards_right, [300, 300]);
-const movement_dist = 10;
+
 
 function add_vectors(to, from) {
    to[0] = to[0] + from[0];
