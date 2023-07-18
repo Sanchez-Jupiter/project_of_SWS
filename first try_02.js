@@ -31,59 +31,91 @@ function add_vectors(to, from) {
    to[1] = to[1] + from[1];
 }
 
+function check_barri(player, barri){
+    for(let i = 0; i < array_length(barri); i = i + 1){
+        if( gameobjects_overlap(barri[i], player) ){
+            return true;
+        }
+    }
+    return false;
+}
+
+
 update_loop(game_state => {
-    const new_position = query_position(player);
+    let new_position = query_position(player);
+    const pre_position = query_position(player);
     let temp = player;
     
    if (input_key_down("w")) {
-       update_position(temp, [-inf, -inf]);
-       if( !gameobjects_overlap(temp, barri[0]) ){
-            add_vectors(new_position, [0, -1 * movement_dist]);
-       }
-       else{
-           add_vectors(new_position, [0, movement_dist]);
+       update_position( player, [-inf, -inf] );
+       if( player === player_towards_left){
+            player = player_towards_left2;
+        }
+        else {
+            player = player_towards_left;
+        }
+       add_vectors(new_position, [0, -1 * movement_dist]);
+       update_position(player, new_position);
+       //display(check_barri(player, barri));
+       if( check_barri(player, barri) ){
+            //const helloworld = create_text("Hello\nworld!");
+            //update_position(helloworld, [300, 300]);
+            new_position = query_position(player);
+            add_vectors(new_position, [0, movement_dist]);
+            update_position(player, new_position);
        }
    }
    
    if (input_key_down("a")) {
-        update_position(temp, [-inf, -inf]);
+        update_position( player, [-inf, -inf] );
         if( player === player_towards_left){
             player = player_towards_left2;
         }
         else {
             player = player_towards_left;
         }
-        if( !gameobjects_overlap(temp, barri[0]) ){
-            add_vectors(new_position, [-1 * movement_dist, 0]);
-       }
-       else {
-           add_vectors(new_position, [movement_dist, 0]);
+        
+        add_vectors(new_position, [-1 * movement_dist, 0]);
+        update_position(player, new_position);
+        if( check_barri(player, barri) ){
+            new_position = query_position(player);
+            add_vectors(new_position, [movement_dist, 0]);
+            update_position(player, new_position);
        }
    }
    
-   if (input_key_down("s")) {
-       update_position(temp, [-inf, -inf]);
-       if( !gameobjects_overlap(temp, barri[0]) ){
-            add_vectors(new_position, [0, movement_dist]);
-       }
-       else{
+    if (input_key_down("s")) {
+       update_position(player, [-inf, -inf]);
+       if( player === player_towards_left){
+            player = player_towards_left2;
+        }
+        else {
+            player = player_towards_left;
+        }
+       add_vectors(new_position, [0, movement_dist]);
+       update_position(player, new_position);
+       if( check_barri(player, barri) ){
+           new_position = query_position(player);
            add_vectors(new_position, [0, -1 * movement_dist]);
+           update_position(player, new_position);
        }
    }
    
    if (input_key_down("d")) {
-       update_position(temp, [-inf, -inf]);
+       update_position(player, [-inf, -inf]);
        if( player === player_towards_right){
             player = player_towards_right2;
         }
         else {
             player = player_towards_right;
         }
-       if( !gameobjects_overlap(temp, barri[0]) ){
-            add_vectors(new_position, [movement_dist, 0]);
-       }
-       else {
+        
+        add_vectors(new_position, [movement_dist, 0]);
+        update_position(player, new_position);
+       if( check_barri(player, barri) ){
+           new_position = query_position(player);
            add_vectors(new_position, [-1 * movement_dist, 0]);
+           update_position(player, new_position);
        }
    }
 
