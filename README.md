@@ -12,10 +12,7 @@ Up to now, the 2D game has been upgraded to version 1.6.2, having achieved major
 
 (details of theme waiting to be decided)
 
-11:27
-
-
-19/7/2023
+11:27  19/7/2023
 
 
 By Zhou Peidong:
