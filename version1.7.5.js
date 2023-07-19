@@ -502,7 +502,6 @@ update_loop(game_state => {
        
    }
    if(input_key_down("2")){
-       update_position(player2[cond2], [-inf, -inf]);
        if(cond2 === player_towards_right2 || cond2 === player_towards_right || cond2 === punch_right || cond2 === punch2_right){
            //cond = punch_right;
            if( check_barri(player2[cond2], barri) ){
