@@ -29,7 +29,7 @@ next version is going to add punch effect and hopefully improve the jumping mech
 By Zhou Peidong:
 
 
-version 1.8 released
+version 1.8.1 released
 
 
 basic elements for 2P game are added
