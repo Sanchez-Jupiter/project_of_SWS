@@ -22,3 +22,19 @@ version 1.7 released
 
 
 next version is going to add punch effect and hopefully improve the jumping mechanism.
+
+11:27  19/7/2023
+
+
+By Zhou Peidong:
+
+
+version 1.8 released
+
+
+basic elements for 2P game are added
+
+
+this is the first one ready to be played
+
+
