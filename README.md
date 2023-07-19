@@ -20,4 +20,4 @@ Up to now, the 2D game has been upgraded to version 1.6.2, having achieved major
 version 1.7 released
 
 
-next version will going to add punch effect and hopefully improve the jumping mechanism.
+next version is going to add punch effect and hopefully improve the jumping mechanism.
