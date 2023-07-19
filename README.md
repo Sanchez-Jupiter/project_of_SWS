@@ -17,6 +17,10 @@ Up to now, the 2D game has been upgraded to version 1.6.2, having achieved major
 
 19/7/2023
 
+
+By Zhou Peidong:
+
+
 version 1.7 released
 
 
